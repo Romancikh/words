@@ -5,6 +5,7 @@ import Container from "@mui/material/Container";
 import NotFound from "./pages/NotFound/NotFound";
 import Dictionary from "./pages/Dictionary/Dictionary";
 import Add from "./pages/Add/Add";
+import Edit from "./pages/Edit/Edit";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Route path="dictionary">
           <Route index element={<Dictionary />} />
           <Route path="add" element={<Add />} />
-          <Route path="edit" />
+          <Route path="edit/:id" element={<Edit />} />
         </Route>
         <Route path="check" />
         <Route path="result" />

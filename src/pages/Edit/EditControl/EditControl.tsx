@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import Typography from "@mui/material/Typography";
 
-function AddControl() {
+type EditControlProps = {
+  id: string;
+};
+
+function EditControl({ id }: EditControlProps) {
   return (
     <Box
       display="flex"
@@ -19,10 +23,10 @@ function AddControl() {
         </Button>
       </Link>
       <Typography component="h1" variant="h3" lineHeight={1} color="#364963">
-        Добавление слова
+        Редактирование слова {id}
       </Typography>
     </Box>
   );
 }
 
-export default AddControl;
+export default EditControl;
