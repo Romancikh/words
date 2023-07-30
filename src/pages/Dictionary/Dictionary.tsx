@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import DictionaryControl from "./DictionaryControl/DictionaryControl";
 import DictionaryList from "./DictionaryList/DictionaryList";
+import { Link } from "react-router-dom";
 
 function Dictionary() {
   return (
@@ -15,9 +16,11 @@ function Dictionary() {
         alignItems="flex-start"
       >
         <DictionaryControl />
-        <Button variant="contained" startIcon={<AddIcon />}>
-          Добавить слово
-        </Button>
+        <Link to="add">
+          <Button variant="contained" startIcon={<AddIcon />}>
+            Добавить слово
+          </Button>
+        </Link>
         <DictionaryList />
       </Box>
     </Container>
