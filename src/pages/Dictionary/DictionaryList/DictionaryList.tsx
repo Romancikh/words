@@ -11,13 +11,19 @@ function DictionaryList() {
   const words = useWordsStore((state) => state.words);
 
   return (
-    <TableContainer>
-      <Table>
-        <TableHead sx={{ background: "#DFE4EC" }}>
+    <TableContainer sx={{ height: "80vh" }}>
+      <Table stickyHeader>
+        <TableHead>
           <TableRow>
-            <TableCell>Слово на русском языке</TableCell>
-            <TableCell>Перевод на английский язык</TableCell>
-            <TableCell align="right">Действие</TableCell>
+            <TableCell sx={{ background: "#DFE4EC" }}>
+              Слово на русском языке
+            </TableCell>
+            <TableCell sx={{ background: "#DFE4EC" }}>
+              Перевод на английский язык
+            </TableCell>
+            <TableCell sx={{ background: "#DFE4EC" }} align="right">
+              Действие
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody sx={{ background: "#FFFFFF" }}>
