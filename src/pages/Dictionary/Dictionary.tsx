@@ -5,8 +5,11 @@ import Button from "@mui/material/Button";
 import DictionaryControl from "./DictionaryControl/DictionaryControl";
 import DictionaryList from "./DictionaryList/DictionaryList";
 import { Link } from "react-router-dom";
+import { useWordsStore } from "../../stores/Words";
 
 function Dictionary() {
+  const words = useWordsStore((state) => state.words);
+
   return (
     <Container maxWidth="xl">
       <Box
@@ -21,7 +24,7 @@ function Dictionary() {
             Добавить слово
           </Button>
         </Link>
-        <DictionaryList />
+        {words.length > 0 && <DictionaryList />}
       </Box>
     </Container>
   );

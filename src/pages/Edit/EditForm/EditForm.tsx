@@ -2,8 +2,15 @@ import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
+import { ChangeEventHandler } from "react";
 
-function EditForm() {
+type EditFormProps = {
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  rusWord: string;
+  engWord: string;
+};
+
+function EditForm({ onChange, rusWord, engWord }: EditFormProps) {
   return (
     <Box bgcolor="#FFFFFF" border="1px solid #DFE4EC" width="100%">
       <Typography
@@ -25,11 +32,16 @@ function EditForm() {
       >
         <Box display="flex" justifyContent="space-between" alignItems="center">
           <Typography>Слово на русском языке</Typography>
-          <TextField size="small" required />
+          <TextField
+            size="small"
+            id="rus"
+            value={rusWord}
+            onChange={onChange}
+          />
         </Box>
         <Box display="flex" justifyContent="space-between" alignItems="center">
           <Typography>Перевод на английский язык</Typography>
-          <TextField size="small" required />
+          <TextField size="small" id="eng" value={engWord} onChange={onChange} />
         </Box>
       </Box>
     </Box>

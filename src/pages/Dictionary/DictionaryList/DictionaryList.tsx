@@ -5,8 +5,11 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import BurgerMenu from "./BurgerMenu/BurgerMenu";
+import { useWordsStore } from "../../../stores/Words";
 
 function DictionaryList() {
+  const words = useWordsStore((state) => state.words);
+
   return (
     <TableContainer>
       <Table>
@@ -18,13 +21,15 @@ function DictionaryList() {
           </TableRow>
         </TableHead>
         <TableBody sx={{ background: "#FFFFFF" }}>
-          <TableRow>
-            <TableCell>Автомобиль</TableCell>
-            <TableCell>Car</TableCell>
-            <TableCell align="right">
-              <BurgerMenu />
-            </TableCell>
-          </TableRow>
+          {words.map((word) => (
+            <TableRow key={word.id}>
+              <TableCell>{word.rus}</TableCell>
+              <TableCell>{word.eng}</TableCell>
+              <TableCell align="right">
+                <BurgerMenu id={word.id} />
+              </TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </TableContainer>

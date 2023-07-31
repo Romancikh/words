@@ -8,8 +8,17 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useState } from "react";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useNavigate } from "react-router-dom";
+import { useWordsStore } from "../../../../stores/Words";
 
-function BurgerMenu() {
+type BurgerMenuProps = {
+  id: string;
+};
+
+function BurgerMenu({ id }: BurgerMenuProps) {
+  const navigate = useNavigate();
+  const remove = useWordsStore((state) => state.remove);
+
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -26,13 +35,21 @@ function BurgerMenu() {
       </IconButton>
       <Paper sx={{ width: "fit-content" }}>
         <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-          <MenuItem>
+          <MenuItem
+            onClick={() => {
+              navigate(`edit/${id}`);
+            }}
+          >
             <ListItemIcon>
               <EditIcon color="primary" />
             </ListItemIcon>
             <ListItemText>Редактировать</ListItemText>
           </MenuItem>
-          <MenuItem>
+          <MenuItem
+            onClick={() => {
+              remove(id);
+            }}
+          >
             <ListItemIcon>
               <DeleteOutlineIcon color="primary" />
             </ListItemIcon>

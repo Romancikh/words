@@ -5,10 +5,10 @@ import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import Typography from "@mui/material/Typography";
 
 type EditControlProps = {
-  id: string;
+  word: string;
 };
 
-function EditControl({ id }: EditControlProps) {
+function EditControl({ word }: EditControlProps) {
   return (
     <Box
       display="flex"
@@ -23,7 +23,7 @@ function EditControl({ id }: EditControlProps) {
         </Button>
       </Link>
       <Typography component="h1" variant="h3" lineHeight={1} color="#364963">
-        Редактирование слова {id}
+        Редактирование слова "{word}"
       </Typography>
     </Box>
   );

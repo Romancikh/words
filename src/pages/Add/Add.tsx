@@ -3,9 +3,38 @@ import AddControl from "./AddControl/AddControl";
 import Box from "@mui/material/Box";
 import AddForm from "./AddForm/AddForm";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useWordsStore } from "../../stores/Words";
+import { ChangeEvent, useState } from "react";
+import Alert from "@mui/material/Alert";
 
 function Add() {
+  const navigate = useNavigate();
+  const add = useWordsStore((state) => state.add);
+  const [showAlert, setShowAlert] = useState<boolean>(false);
+  const [rusWord, setRusWord] = useState<string>("");
+  const [engWord, setEngWord] = useState<string>("");
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.id === "rus") {
+      setRusWord(event.target.value);
+    } else if (event.target.id === "eng") {
+      setEngWord(event.target.value);
+    }
+  };
+
+  const handleAdd = () => {
+    if (rusWord && engWord) {
+      add({
+        rus: rusWord,
+        eng: engWord,
+      });
+      navigate("/dictionary");
+    } else {
+      setShowAlert(true);
+    }
+  };
+  
   return (
     <Container maxWidth="xl">
       <Box
@@ -15,9 +44,21 @@ function Add() {
         alignItems="flex-start"
       >
         <AddControl />
-        <AddForm />
+        {showAlert && (
+          <Alert
+            severity="error"
+            onClose={() => {
+              setShowAlert(false);
+            }}
+          >
+            Не указана {rusWord ? "английская" : "русская"} версия
+          </Alert>
+        )}
+        <AddForm onChange={handleChange} />
         <Box display="flex" gap={2}>
-          <Button variant="contained">сохранить</Button>
+          <Button variant="contained" onClick={handleAdd}>
+            сохранить
+          </Button>
           <Link to="/dictionary">
             <Button variant="outlined">отменить</Button>
           </Link>
