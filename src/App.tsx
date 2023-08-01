@@ -6,6 +6,7 @@ import Dictionary from "./pages/Dictionary/Dictionary";
 import Add from "./pages/Add/Add";
 import Edit from "./pages/Edit/Edit";
 import Check from "./pages/Check/Check";
+import Result from "./pages/Result/Result";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path="edit/:id" element={<Edit />} />
         </Route>
         <Route path="check" element={<Check />} />
-        <Route path="result" />
+        <Route path="result" element={<Result />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Container>

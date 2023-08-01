@@ -1,11 +1,6 @@
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
-
-type Answer = {
-  rus: string;
-  eng: string;
-  isCorrect: boolean;
-};
+import { Answer } from "../types/Answer";
 
 type AnswersState = {
   answers: Answer[];

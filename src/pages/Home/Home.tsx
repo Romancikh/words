@@ -18,10 +18,10 @@ function Home() {
           Выберите режим
         </Typography>
         <Box display="flex" gap={2}>
-          <Link to="dictionary">
+          <Link to="/dictionary">
             <Button variant="contained">заполнить словарь</Button>
           </Link>
-          <Link to="check">
+          <Link to="/check">
             <Button variant="outlined">проверить знания</Button>
           </Link>
         </Box>
