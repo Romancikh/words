@@ -3,8 +3,11 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import Typography from "@mui/material/Typography";
+import { useAnswersStore } from "../../../stores/Answers";
 
 function CheckControl() {
+  const clearAnswers = useAnswersStore((state) => state.clear);
+
   return (
     <Box
       display="flex"
@@ -13,7 +16,7 @@ function CheckControl() {
       gap={2.5}
       marginTop={5}
     >
-      <Link to="/">
+      <Link to="/" onClick={clearAnswers}>
         <Button variant="outlined" sx={{ padding: 1, minWidth: "unset" }}>
           <NavigateBeforeIcon />
         </Button>

@@ -2,8 +2,12 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import CheckControl from "./CheckControl/CheckControl";
 import CheckGame from "./CheckGame/CheckGame";
+import { useWordsStore } from "../../stores/Words";
+import Alert from "@mui/material/Alert";
 
 function Check() {
+  const words = useWordsStore((state) => state.words);
+
   return (
     <Container maxWidth="xl">
       <Box
@@ -13,7 +17,13 @@ function Check() {
         alignItems="flex-start"
       >
         <CheckControl />
-        <CheckGame />
+        {words.length > 1 ? (
+          <CheckGame />
+        ) : (
+          <Alert severity="warning">
+            Недостаточно слов для проверки знаний
+          </Alert>
+        )}
       </Box>
     </Container>
   );
