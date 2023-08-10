@@ -1,5 +1,5 @@
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+import Button from "tlp-ui-kit/dist/Button/Button";
 import Typography from "@mui/material/Typography";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import { Link } from "react-router-dom";
@@ -14,7 +14,7 @@ function DictionaryControl() {
       marginTop={5}
     >
       <Link to="/">
-        <Button variant="outlined" sx={{ padding: 1, minWidth: "unset" }}>
+        <Button variant="outlined" padding={1} minWidth="unset">
           <NavigateBeforeIcon />
         </Button>
       </Link>

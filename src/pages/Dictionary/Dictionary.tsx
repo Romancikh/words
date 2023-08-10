@@ -1,7 +1,7 @@
 import Container from "@mui/material/Container";
 import AddIcon from "@mui/icons-material/Add";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+import Button from "tlp-ui-kit/dist/Button/Button";
 import DictionaryControl from "./DictionaryControl/DictionaryControl";
 import DictionaryList from "./DictionaryList/DictionaryList";
 import { Link } from "react-router-dom";

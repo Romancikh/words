@@ -1,5 +1,5 @@
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+import Button from "tlp-ui-kit/dist/Button/Button";
 import Select from "@mui/material/Select";
 import Typography from "@mui/material/Typography";
 import { useWordsStore } from "../../../stores/Words";
@@ -152,16 +152,16 @@ function CheckGame() {
         <Button
           variant="contained"
           disabled={isCheckDisables}
-          sx={{ marginTop: 3 }}
           onClick={handleCheck}
+          marginTop={3}
         >
           проверить
         </Button>
         {isNextShown && (
           <Button
             variant="contained"
-            sx={{ marginTop: 3 }}
             onClick={handleNext}
+            marginTop={3}
           >
             дальше
           </Button>
@@ -171,8 +171,8 @@ function CheckGame() {
             <Button
               variant="contained"
               color="success"
-              sx={{ marginTop: 3 }}
               onClick={handleNext}
+              marginTop={3}
             >
               результат
             </Button>

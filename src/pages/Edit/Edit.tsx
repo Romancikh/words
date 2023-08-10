@@ -2,7 +2,7 @@ import Container from "@mui/material/Container";
 import EditControl from "./EditControl/EditControl";
 import Box from "@mui/material/Box";
 import EditForm from "./EditForm/EditForm";
-import Button from "@mui/material/Button";
+import Button from "tlp-ui-kit/dist/Button/Button";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import NotFound from "../NotFound/NotFound";
 import { useWordsStore } from "../../stores/Words";
