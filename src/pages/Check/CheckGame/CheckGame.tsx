@@ -1,14 +1,9 @@
-import Box from "@mui/material/Box";
-import Button from "tlp-ui-kit/dist/Button/Button";
-import Select from "@mui/material/Select";
-import Typography from "@mui/material/Typography";
 import { useWordsStore } from "../../../stores/Words";
 import { useAnswersStore } from "../../../stores/Answers";
 import { useEffect, useState } from "react";
-import MenuItem from "@mui/material/MenuItem";
 import { Word } from "../../../types/Word";
-import Alert from "@mui/material/Alert";
 import { Link } from "react-router-dom";
+import { Box, Typography, Select, MenuItem, Alert, Button } from "tlp-ui-kit";
 
 function mixList<T>(list: T[]): T[] {
   const mixedList = [...list];
@@ -129,7 +124,7 @@ function CheckGame() {
             fullWidth
             value={selected}
             disabled={isSelectDisables}
-            sx={{ maxWidth: 220 }}
+            maxWidth={220}
             onChange={(event) => {
               setSelected(event.target.value);
             }}

@@ -1,17 +1,8 @@
-import Box from "@mui/material/Box";
-import Button from "tlp-ui-kit/dist/Button/Button";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import { useAnswersStore } from "../../stores/Answers";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
-import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import { Answer } from "../../types/Answer";
 import { useEffect, useState } from "react";
+import { Container, Box, Typography, ListItem, ListItemIcon, ListItemText, Button, Icon } from "tlp-ui-kit";
 
 function getCorrectNumber(answers: Answer[]): number {
   return answers.filter((answer) => answer.isCorrect).length;
@@ -30,7 +21,6 @@ function Result() {
     <Container maxWidth="xl">
       <Box display="flex" flexDirection="column" gap={3.5}>
         <Typography
-          component="h1"
           variant="h3"
           lineHeight={1}
           marginTop={5}
@@ -51,28 +41,28 @@ function Result() {
           <Box display="flex" flexDirection="column">
             <ListItem divider>
               <ListItemIcon>
-                <CheckCircleOutlineIcon color="success" />
+                <Icon name="CheckCircleOutlineIcon" color="success" />
               </ListItemIcon>
               <ListItemText>Правильные</ListItemText>
-              <ListItemText sx={{ textAlign: "right" }}>
+              <ListItemText textAlign="right">
                 {correctNumber}
               </ListItemText>
             </ListItem>
             <ListItem divider>
               <ListItemIcon>
-                <CancelOutlinedIcon color="error" />
+                <Icon name="CancelOutlinedIcon" color="error" />
               </ListItemIcon>
               <ListItemText>Ошибочные</ListItemText>
-              <ListItemText sx={{ textAlign: "right" }}>
+              <ListItemText textAlign="right">
                 {answers.length - correctNumber}
               </ListItemText>
             </ListItem>
             <ListItem divider>
               <ListItemIcon>
-                <AutoStoriesIcon color="secondary" />
+                <Icon name="AutoStoriesIcon" color="secondary" />
               </ListItemIcon>
               <ListItemText>Всего слов</ListItemText>
-              <ListItemText sx={{ textAlign: "right" }}>
+              <ListItemText textAlign="right">
                 {answers.length}
               </ListItemText>
             </ListItem>

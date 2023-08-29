@@ -1,11 +1,8 @@
-import Container from "@mui/material/Container";
-import AddIcon from "@mui/icons-material/Add";
-import Box from "@mui/material/Box";
-import Button from "tlp-ui-kit/dist/Button/Button";
 import DictionaryControl from "./DictionaryControl/DictionaryControl";
 import DictionaryList from "./DictionaryList/DictionaryList";
 import { Link } from "react-router-dom";
 import { useWordsStore } from "../../stores/Words";
+import { Container, Box, Icon, Button } from "tlp-ui-kit";
 
 function Dictionary() {
   const words = useWordsStore((state) => state.words);
@@ -20,7 +17,7 @@ function Dictionary() {
       >
         <DictionaryControl />
         <Link to="add">
-          <Button variant="contained" startIcon={<AddIcon />}>
+          <Button variant="contained" startIcon={<Icon name="AddIcon" />}>
             Добавить слово
           </Button>
         </Link>

@@ -1,8 +1,5 @@
-import Box from "@mui/material/Box";
-import Button from "tlp-ui-kit/dist/Button/Button";
-import Typography from "@mui/material/Typography";
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import { Link } from "react-router-dom";
+import { Box, Button, Icon, Typography } from "tlp-ui-kit";
 
 function DictionaryControl() {
   return (
@@ -15,10 +12,10 @@ function DictionaryControl() {
     >
       <Link to="/">
         <Button variant="outlined" padding={1} minWidth="unset">
-          <NavigateBeforeIcon />
+          <Icon name="NavigateBeforeIcon" />
         </Button>
       </Link>
-      <Typography component="h1" variant="h3" lineHeight={1} color="#364963">
+      <Typography variant="h3" lineHeight={1} color="#364963">
         Словарь
       </Typography>
     </Box>

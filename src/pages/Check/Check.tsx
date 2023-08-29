@@ -1,9 +1,7 @@
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 import CheckControl from "./CheckControl/CheckControl";
 import CheckGame from "./CheckGame/CheckGame";
 import { useWordsStore } from "../../stores/Words";
-import Alert from "@mui/material/Alert";
+import { Container, Box, Alert } from "tlp-ui-kit";
 
 function Check() {
   const words = useWordsStore((state) => state.words);
