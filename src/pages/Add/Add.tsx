@@ -1,12 +1,9 @@
-import Container from "@mui/material/Container";
-import AddControl from "./AddControl/AddControl";
-import Box from "@mui/material/Box";
-import AddForm from "./AddForm/AddForm";
-import Button from "@mui/material/Button";
+import { ChangeEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useWordsStore } from "../../stores/Words";
-import { ChangeEvent, useState } from "react";
-import Alert from "@mui/material/Alert";
+import AddControl from "./AddControl/AddControl";
+import AddForm from "./AddForm/AddForm";
+import { Container, Box, Alert, Button } from "tlp-ui-kit";
 
 function Add() {
   const navigate = useNavigate();

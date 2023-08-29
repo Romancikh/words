@@ -1,15 +1,7 @@
-import ListItemIcon from "@mui/material/ListItemIcon";
-import MenuItem from "@mui/material/MenuItem";
-import Menu from "@mui/material/Menu";
-import Paper from "@mui/material/Paper";
-import EditIcon from "@mui/icons-material/Edit";
-import ListItemText from "@mui/material/ListItemText";
-import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useState } from "react";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom";
 import { useWordsStore } from "../../../../stores/Words";
+import { IconButton, Paper, Menu, MenuItem, ListItemIcon, ListItemText, Icon } from "tlp-ui-kit";
 
 type BurgerMenuProps = {
   id: string;
@@ -31,9 +23,9 @@ function BurgerMenu({ id }: BurgerMenuProps) {
   return (
     <>
       <IconButton onClick={handleClick}>
-        <MenuIcon />
+        <Icon name="MenuIcon" />
       </IconButton>
-      <Paper sx={{ width: "fit-content" }}>
+      <Paper width= "fit-content">
         <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
           <MenuItem
             onClick={() => {
@@ -41,7 +33,7 @@ function BurgerMenu({ id }: BurgerMenuProps) {
             }}
           >
             <ListItemIcon>
-              <EditIcon color="primary" />
+              <Icon name="EditIcon" color="primary" />
             </ListItemIcon>
             <ListItemText>Редактировать</ListItemText>
           </MenuItem>
@@ -51,7 +43,7 @@ function BurgerMenu({ id }: BurgerMenuProps) {
             }}
           >
             <ListItemIcon>
-              <DeleteOutlineIcon color="primary" />
+              <Icon name="DeleteOutlineIcon" color="primary" />
             </ListItemIcon>
             <ListItemText>Удалить</ListItemText>
           </MenuItem>

@@ -1,13 +1,10 @@
-import Container from "@mui/material/Container";
 import EditControl from "./EditControl/EditControl";
-import Box from "@mui/material/Box";
 import EditForm from "./EditForm/EditForm";
-import Button from "@mui/material/Button";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import NotFound from "../NotFound/NotFound";
 import { useWordsStore } from "../../stores/Words";
 import { ChangeEvent, useState } from "react";
-import Alert from "@mui/material/Alert";
+import { Container, Box, Alert, Button } from "tlp-ui-kit";
 
 function Edit() {
   const navigate = useNavigate();

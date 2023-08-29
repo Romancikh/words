@@ -1,8 +1,5 @@
-import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
-import TextField from "@mui/material/TextField";
-import Typography from "@mui/material/Typography";
 import { ChangeEventHandler } from "react";
+import { Box, Typography, Divider, TextField } from "tlp-ui-kit";
 
 type AddFormProps = {
   onChange: ChangeEventHandler<HTMLInputElement>;
@@ -12,7 +9,6 @@ function AddForm({ onChange }: AddFormProps) {
   return (
     <Box bgcolor="#FFFFFF" border="1px solid #DFE4EC" width="100%">
       <Typography
-        component="h2"
         variant="h5"
         color="#364963"
         marginY={2}

@@ -1,5 +1,4 @@
-import Alert from "@mui/material/Alert";
-import AlertTitle from "@mui/material/AlertTitle";
+import { Alert, AlertTitle } from "tlp-ui-kit";
 
 function NotFound() {
   return (

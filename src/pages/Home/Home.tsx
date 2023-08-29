@@ -1,15 +1,11 @@
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import { Container, Box, Typography, Button } from "tlp-ui-kit";
 
 function Home() {
   return (
     <Container maxWidth="xl">
       <Box display="flex" flexDirection="column" gap={3.5}>
         <Typography
-          component="h1"
           variant="h3"
           lineHeight={1}
           marginTop={5}
